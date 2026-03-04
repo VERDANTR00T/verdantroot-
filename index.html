@@ -3,42 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verdant Root | AI Skin Scan</title>
+<title>Verdant Root | Premium AI Skin Guidance</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root {
---deep-green:#0f2f26;
---gold:#c6a75e;
---light:#f8f6f2;
-}
-
-body {
+body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:var(--light);
-scroll-behavior:smooth;
+background:#f8f6f2;
+color:#1a1a1a;
 }
 
-nav {
+nav{
 display:flex;
 justify-content:space-between;
 padding:20px 8%;
 background:white;
-position:fixed;
-width:100%;
 }
 
-nav h1 {
+nav h1{
 font-family:'Playfair Display',serif;
-color:var(--deep-green);
+color:#0f2f26;
 }
 
-section {padding:120px 8%;}
-
-.hero {
-height:100vh;
+.hero{
+height:90vh;
 background:linear-gradient(rgba(15,47,38,0.8),rgba(15,47,38,0.8)),
 url('https://images.unsplash.com/photo-1606813909350-8d50a0bdf4e0?q=80&w=1920');
 background-size:cover;
@@ -47,62 +37,39 @@ align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
+padding:20px;
 }
 
-.hero h2 {
+.hero h2{
 font-family:'Playfair Display',serif;
-font-size:46px;
+font-size:48px;
 }
 
-.btn {
+.btn{
+margin-top:30px;
 padding:14px 30px;
-border:1px solid var(--gold);
+border:1px solid #c6a75e;
 background:transparent;
 color:white;
 cursor:pointer;
-margin-top:20px;
+font-size:14px;
 }
 
-.btn:hover {
-background:var(--gold);
-color:var(--deep-green);
+.btn:hover{
+background:#c6a75e;
+color:#0f2f26;
 }
 
-.scan-box {
-max-width:500px;
-margin:auto;
-background:white;
-padding:40px;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
+section{
+padding:80px 8%;
 }
 
-input, select {
-width:100%;
-padding:12px;
-margin-bottom:15px;
-}
-
-.analyze-btn {
-background:var(--deep-green);
+footer{
+background:#0f2f26;
 color:white;
-border:none;
-padding:12px;
-width:100%;
-cursor:pointer;
-}
-
-.loading {
-display:none;
 text-align:center;
-margin-top:20px;
-color:var(--deep-green);
-}
-
-.result {
-display:none;
-margin-top:20px;
-background:#f1f1f1;
-padding:20px;
+padding:30px;
+font-size:14px;
 }
 </style>
 </head>
@@ -115,50 +82,32 @@ padding:20px;
 
 <div class="hero">
 <div>
-<h2>AI-Powered Skin Scan</h2>
-<p>Premium digital dermatology guidance. Affordable for everyone.</p>
-<a href="#scan"><button class="btn">Start Skin Analysis</button></a>
-<p style="margin-top:10px;font-size:13px;">AI Module currently in Beta Phase</p>
-</div>
-</div>
+<h2>Premium AI Skin Intelligence</h2>
+<p>Affordable digital dermatology guidance for smarter first decisions.</p>
 
-<section id="scan">
-<div class="scan-box">
-<h3>Upload Your Image</h3>
+<a href="scan.html">
+<button class="btn">Start Skin Analysis</button>
+</a>
 
-<input type="file">
-
-<select>
-<option>Select Concern</option>
-<option>Acne</option>
-<option>Pigmentation</option>
-<option>Fungal Infection</option>
-</select>
-
-<button class="analyze-btn" onclick="analyze()">Analyze Skin</button>
-
-<div class="loading" id="loading">Analyzing with AI...</div>
-
-<div class="result" id="result">
-<strong>AI Skin Scan (Beta Preview)</strong>
-<p>This AI module is currently under development.</p>
-<p>Full automated analysis launching soon.</p>
-<p>Join early access to get notified.</p>
-</div>
+<p style="margin-top:15px;font-size:13px;">
+AI Module currently in Beta Phase
+</p>
 
 </div>
+</div>
+
+<section>
+<h2>Our Mission</h2>
+<p>
+Verdant Root is building AI-powered preliminary skin guidance to reduce unnecessary dermatology expenses in Tier-2 and Tier-3 India.
+</p>
 </section>
 
-<script>
-function analyze(){
-document.getElementById("loading").style.display="block";
-setTimeout(function(){
-document.getElementById("loading").style.display="none";
-document.getElementById("result").style.display="block";
-},2000);
-}
-</script>
+<footer>
+© 2026 Verdant Root. This platform provides educational guidance and is not a medical diagnosis.
+</footer>
 
 </body>
 </html>
+
 
