@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Skin Scan | Verdant Root</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#f8f6f2;
+color:#1a1a1a;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 8%;
+background:white;
+}
+
+nav h1{
+font-family:'Playfair Display',serif;
+color:#0f2f26;
+}
+
+.container{
+max-width:500px;
+margin:100px auto;
+background:white;
+padding:40px;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+input, select{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#0f2f26;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.loading{
+display:none;
+margin-top:15px;
+text-align:center;
+}
+
+.result{
+display:none;
+margin-top:20px;
+background:#f1f1f1;
+padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>Verdant Root</h1>
+</nav>
+
+<div class="container">
+
+<h2>AI Skin Scan (Beta)</h2>
+
+<input type="file">
+
+<select>
+<option>Select Skin Concern</option>
+<option>Acne</option>
+<option>Pigmentation</option>
+<option>Fungal Infection</option>
+</select>
+
+<button onclick="analyze()">Analyze Skin</button>
+
+<div class="loading" id="loading">
+Analyzing with AI...
+</div>
+
+<div class="result" id="result">
+<strong>Beta Preview</strong>
+<p>This AI module is currently under development.</p>
+<p>Full automated skin assessment launching soon.</p>
+</div>
+
+</div>
+
+<script>
+function analyze(){
+document.getElementById("loading").style.display="block";
+setTimeout(function(){
+document.getElementById("loading").style.display="none";
+document.getElementById("result").style.display="block";
+},2000);
+}
+</script>
+
+</body>
+</html>
