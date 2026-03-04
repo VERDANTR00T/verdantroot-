@@ -8,260 +8,215 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
 :root {
     --deep-green: #0f2f26;
     --forest-green: #1f4d3b;
     --gold: #c6a75e;
     --light-bg: #f8f6f2;
-    --text-dark: #1a1a1a;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* {margin:0;padding:0;box-sizing:border-box;}
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--light-bg);
-    color: var(--text-dark);
-    line-height: 1.6;
+    font-family:'Inter',sans-serif;
+    background:var(--light-bg);
+    scroll-behavior:smooth;
 }
 
-/* NAVIGATION */
-
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 8%;
-    background: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:white;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
 }
 
 nav h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    letter-spacing: 1px;
-    color: var(--deep-green);
+    font-family:'Playfair Display',serif;
+    color:var(--deep-green);
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
+    list-style:none;
+    display:flex;
+    gap:30px;
 }
 
-nav ul li {
-    cursor: pointer;
-    font-size: 14px;
-    color: var(--deep-green);
+nav ul li a {
+    text-decoration:none;
+    color:var(--deep-green);
+    font-size:14px;
 }
 
-/* HERO SECTION */
+section {padding:100px 8%;}
 
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(15,47,38,0.7), rgba(15,47,38,0.7)), 
+    height:100vh;
+    background:linear-gradient(rgba(15,47,38,0.7),rgba(15,47,38,0.7)),
     url('https://images.unsplash.com/photo-1606813909350-8d50a0bdf4e0?q=80&w=1920');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 0 20px;
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:0 20px;
 }
 
 .hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 52px;
-    max-width: 900px;
-    margin-bottom: 20px;
+    font-family:'Playfair Display',serif;
+    font-size:48px;
+    margin-bottom:20px;
 }
 
-.hero p {
-    font-size: 18px;
-    max-width: 600px;
-    margin: auto;
-    margin-bottom: 40px;
-}
+.hero p {margin-bottom:30px;}
 
 .btn {
-    padding: 14px 35px;
-    border: 1px solid var(--gold);
-    background: transparent;
-    color: white;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.3s ease;
+    padding:14px 35px;
+    border:1px solid var(--gold);
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 .btn:hover {
-    background: var(--gold);
-    color: var(--deep-green);
-}
-
-/* SECTION */
-
-section {
-    padding: 100px 8%;
+    background:var(--gold);
+    color:var(--deep-green);
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: var(--deep-green);
+    font-family:'Playfair Display',serif;
+    font-size:34px;
+    margin-bottom:20px;
+    color:var(--deep-green);
 }
-
-.section-sub {
-    max-width: 600px;
-    margin-bottom: 60px;
-}
-
-/* GRID */
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
 }
 
 .card {
-    background: white;
-    padding: 40px;
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: 0.3s ease;
+    background:white;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.form-section {
+    background:var(--deep-green);
+    color:white;
 }
 
-.card h3 {
-    margin-bottom: 15px;
-    color: var(--forest-green);
+form {
+    max-width:500px;
+    margin-top:30px;
 }
 
-/* COMPARISON */
-
-.comparison {
-    background: var(--deep-green);
-    color: white;
-    text-align: center;
+input, select {
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:none;
 }
 
-.comparison h2 {
-    color: white;
+.submit-btn {
+    background:var(--gold);
+    border:none;
+    padding:12px;
+    cursor:pointer;
+    width:100%;
 }
-
-/* FOOTER */
 
 footer {
-    background: var(--deep-green);
-    color: white;
-    padding: 60px 8%;
-    text-align: center;
+    background:var(--deep-green);
+    color:white;
+    text-align:center;
+    padding:40px;
+    font-size:14px;
 }
-
-footer p {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-    .hero h2 {
-        font-size: 32px;
-    }
-}
-
 </style>
 </head>
+
 <body>
 
 <nav>
     <h1>Verdant Root</h1>
     <ul>
-        <li>How It Works</li>
-        <li>Technology</li>
-        <li>Consult</li>
-        <li>Learn</li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#about">Technology</a></li>
+        <li><a href="#early">Early Access</a></li>
     </ul>
 </nav>
 
 <div class="hero">
     <div>
-        <h2>Premium AI Skin Intelligence. Without Premium Cost.</h2>
-        <p>Affordable digital dermatology guidance designed for Tier-2 and Tier-3 India.</p>
-        <button class="btn">Start Skin Analysis</button>
+        <h2>Premium AI Skin Intelligence Without Premium Cost</h2>
+        <p>Affordable digital dermatology guidance for smarter first decisions.</p>
+        <a href="#early"><button class="btn">Start Skin Analysis</button></a>
     </div>
 </div>
 
-<section>
+<section id="how">
     <h2 class="section-title">How It Works</h2>
-    <p class="section-sub">A smarter first step before expensive consultations.</p>
-
     <div class="grid">
         <div class="card">
-            <h3>1. Upload & Answer</h3>
-            <p>Upload your image and answer guided skin questions.</p>
+            <h3>Upload & Answer</h3>
+            <p>Upload your image and answer guided questions.</p>
         </div>
         <div class="card">
-            <h3>2. AI Analysis</h3>
-            <p>Advanced computer vision detects patterns and severity levels.</p>
+            <h3>AI Analysis</h3>
+            <p>Pattern detection estimates severity and risk level.</p>
         </div>
         <div class="card">
-            <h3>3. Smart Care Plan</h3>
-            <p>Receive affordable skincare guidance under ₹1000 budget.</p>
+            <h3>Smart Care Plan</h3>
+            <p>Receive affordable skincare guidance under budget.</p>
         </div>
     </div>
 </section>
 
-<section class="comparison">
-    <h2 class="section-title">Traditional vs Verdant Root</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Traditional Path</h3>
-            <p>High consultation cost. Travel expense. Multiple visits. Random product trials.</p>
-        </div>
-        <div class="card">
-            <h3>Verdant Root Smart Path</h3>
-            <p>Affordable AI assessment. Cost-efficient plan. Guided dermatologist connection.</p>
-        </div>
-    </div>
+<section id="about">
+    <h2 class="section-title">Technology & Mission</h2>
+    <p>Verdant Root is building AI-powered preliminary skin guidance to reduce unnecessary spending and improve early decision-making in Tier-2 and Tier-3 India.</p>
 </section>
 
-<section>
-    <h2 class="section-title">AI Technology</h2>
-    <p class="section-sub">
-        Powered by computer vision, pattern detection, dermatology-trained datasets, and structured risk scoring.
-    </p>
-</section>
+<section id="early" class="form-section">
+    <h2 class="section-title">Join Early Access</h2>
+    <p>Be among the first users when AI Skin Scan launches.</p>
 
-<section>
-    <h2 class="section-title">Education Library</h2>
-    <div class="grid">
-        <div class="card"><h3>Acne Basics</h3><p>Understand types and severity levels.</p></div>
-        <div class="card"><h3>Fungal Infections</h3><p>Learn early signs and prevention.</p></div>
-        <div class="card"><h3>Steroid Awareness</h3><p>Prevent misuse and long-term damage.</p></div>
-    </div>
+    <form onsubmit="showMessage(event)">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <select required>
+            <option value="">Select Skin Concern</option>
+            <option>Acne</option>
+            <option>Pigmentation</option>
+            <option>Fungal Infection</option>
+            <option>General Skincare</option>
+        </select>
+        <button type="submit" class="submit-btn">Join Early Access</button>
+    </form>
+
+    <p id="successMsg" style="margin-top:20px;"></p>
 </section>
 
 <footer>
-    <p>© 2026 Verdant Root. This platform provides educational guidance and is not a medical diagnosis.</p>
+    © 2026 Verdant Root. This platform provides educational guidance and is not a medical diagnosis.
 </footer>
+
+<script>
+function showMessage(event) {
+    event.preventDefault();
+    document.getElementById("successMsg").innerText =
+    "Thank you. You are now on the early access list.";
+}
+</script>
 
 </body>
 </html>
