@@ -1,146 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Skin Intelligence | Verdant Root</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Verdant Root AI Skin Analysis</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top, #123d32, #071a15);
-    color: #ffffff;
+
+body{
+font-family: Georgia, serif;
+background:#f5f5f5;
+margin:0;
 }
 
-.wrapper {
-    max-width: 800px;
-    margin: 70px auto;
-    padding: 50px;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(25px);
-    border-radius: 20px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+.header{
+background:#0f3d2e;
+color:white;
+padding:25px;
+text-align:center;
+font-size:28px;
+letter-spacing:2px;
 }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    text-align: center;
-    font-size: 38px;
+.container{
+max-width:600px;
+margin:40px auto;
+background:white;
+padding:35px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-.subtitle {
-    text-align: center;
-    opacity: 0.75;
-    margin-bottom: 40px;
+h2{
+color:#0f3d2e;
 }
 
-.step {
-    display: none;
-    animation: fade 0.6s ease;
+label{
+display:block;
+margin-top:15px;
+font-weight:bold;
 }
 
-.step.active {
-    display: block;
+input, select, textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:6px;
+border:1px solid #ccc;
 }
 
-@keyframes fade {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+button{
+margin-top:20px;
+width:100%;
+padding:15px;
+background:#0f3d2e;
+color:white;
+border:none;
+font-size:16px;
+cursor:pointer;
 }
 
-label {
-    display: block;
-    margin-top: 25px;
-    font-size: 13px;
-    letter-spacing: 1px;
+button:hover{
+background:#145c46;
 }
 
-input, select, textarea {
-    width: 100%;
-    padding: 14px;
-    margin-top: 8px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 10px;
-    color: white;
-    font-size: 14px;
+.result{
+margin-top:25px;
+padding:20px;
+background:#f1f8f5;
+border-left:5px solid #0f3d2e;
 }
 
-button {
-    margin-top: 35px;
-    padding: 14px 30px;
-    border: 1px solid #d4af37;
-    background: transparent;
-    color: white;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #d4af37;
-    color: #0b2e25;
-}
-
-.progress {
-    width: 100%;
-    height: 6px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    margin-top: 30px;
-    overflow: hidden;
-}
-
-.progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #d4af37;
-    transition: width 2.5s ease;
-}
-
-.result-card {
-    margin-top: 30px;
-    padding: 35px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 15px;
-    line-height: 1.8;
-}
-
-.score {
-    font-size: 28px;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 15px;
-}
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-
-<h1>AI Skin Intelligence</h1>
-<p class="subtitle">Clinical-grade preliminary digital evaluation</p>
-
-<div class="step active" id="step1">
-<label>Full Name</label>
-<input type="text" id="name">
-
-<label>Age</label>
-<input type="number" id="age">
-
-<button onclick="nextStep()">CONTINUE</button>
+<div class="header">
+Verdant Root | AI Skin Intake
 </div>
 
-<div class="step" id="step2">
+<div class="container">
+
+<h2>Skin Intake Form</h2>
+
+<label>Your Name</label>
+<input type="text" id="name">
+
+<label>Email</label>
+<input type="email" id="email">
+
 <label>Primary Skin Concern</label>
 <select id="concern">
 <option>Acne</option>
 <option>Pigmentation</option>
-<option>Dryness</option>
-<option>Oiliness</option>
+<option>Dry Skin</option>
+<option>Oily Skin</option>
 <option>Dark Spots</option>
 <option>Sensitivity</option>
 </select>
@@ -148,61 +101,41 @@ button:hover {
 <label>Describe Symptoms</label>
 <textarea id="description" rows="4"></textarea>
 
-<button onclick="startAnalysis()">BEGIN AI ANALYSIS</button>
-</div>
-
-<div class="step" id="step3">
-<p>Analyzing skin biomarkers...</p>
-
-<div class="progress">
-<div class="progress-bar" id="bar"></div>
-</div>
+<button onclick="startAnalysis()">Begin AI Skin Intake</button>
 
 <div id="resultArea"></div>
-</div>
 
 </div>
 
 <script>
-function nextStep() {
-    document.getElementById("step1").classList.remove("active");
-    document.getElementById("step2").classList.add("active");
-}
 
-function startAnalysis() {
-    document.getElementById("step2").classList.remove("active");
-    document.getElementById("step3").classList.add("active");
+function startAnalysis(){
 
-    document.getElementById("bar").style.width = "100%";
+var name = document.getElementById("name").value;
+var concern = document.getElementById("concern").value;
 
-    setTimeout(function() {
+document.getElementById("resultArea").innerHTML =
+"<div class='result'>" +
 
-        var name = document.getElementById("name").value;
-        var concern = document.getElementById("concern").value;
-
-        
-
-        document.getElementById("resultArea").innerHTML =
-"<div class='result-card'>" +
-"<h3>Verdant Root Intake Report</h3><br>" +
+"<h3>Verdant Root Preliminary Intake Report</h3>" +
 
 "<b>Name:</b> " + name + "<br>" +
 "<b>Primary Concern:</b> " + concern + "<br><br>" +
 
-"Our AI skin analysis system is currently under development." +
+"Our AI dermatology guidance system is currently under development." +
 
-"<br><br>Your information has been securely recorded." +
+"<br><br>Your skin concern has been recorded in our intake system." +
 
-"<br><br>Full AI skin report will be available soon." +
+"<br><br>Full AI skin analysis and dermatologist support will be available soon." +
 
-"<br><br>For consultation contact:" +
+"<br><br>For early access contact:<br>" +
 
-"<br>verdantroot@gmail.com" +
+"<b>verdantroot@gmail.com</b>" +
 
 "</div>";
 
-    }, 2600);
 }
+
 </script>
 
 </body>
