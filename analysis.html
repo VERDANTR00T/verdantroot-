@@ -100,7 +100,36 @@ overflow:hidden;
 height:100%;
 width:0%;
 background:#d4af37;
-transition:width 2.5s ease;
+transition:width 3s ease;
+}
+
+.scan-box{
+margin-top:30px;
+height:180px;
+border-radius:12px;
+background:rgba(255,255,255,0.05);
+position:relative;
+overflow:hidden;
+}
+
+.scan-line{
+position:absolute;
+width:100%;
+height:2px;
+background:#d4af37;
+animation:scan 2s infinite;
+}
+
+@keyframes scan{
+0%{top:0;}
+50%{top:100%;}
+100%{top:0;}
+}
+
+.ai-text{
+margin-top:20px;
+font-size:14px;
+opacity:0.8;
 }
 
 .result-card{
@@ -171,7 +200,7 @@ color:#0b2e25;
 
 <label>Describe Symptoms</label>
 
-<textarea id="description" rows="4"></textarea>
+<textarea rows="4"></textarea>
 
 <button onclick="startAnalysis()">BEGIN AI ANALYSIS</button>
 
@@ -182,9 +211,15 @@ color:#0b2e25;
 
 <p>Analyzing skin biomarkers...</p>
 
+<div class="scan-box">
+<div class="scan-line"></div>
+</div>
+
 <div class="progress">
 <div class="progress-bar" id="bar"></div>
 </div>
+
+<p class="ai-text" id="aiText">Initializing AI dermal scanner...</p>
 
 <div id="resultArea"></div>
 
@@ -196,10 +231,8 @@ color:#0b2e25;
 <script>
 
 function nextStep(){
-
 document.getElementById("step1").classList.remove("active");
 document.getElementById("step2").classList.add("active");
-
 }
 
 function startAnalysis(){
@@ -208,6 +241,23 @@ document.getElementById("step2").classList.remove("active");
 document.getElementById("step3").classList.add("active");
 
 document.getElementById("bar").style.width="100%";
+
+var messages=[
+"Initializing AI dermal scanner...",
+"Mapping facial skin zones...",
+"Analyzing dermal texture patterns...",
+"Evaluating inflammation signals...",
+"Preparing diagnostic framework..."
+];
+
+var i=0;
+
+var interval=setInterval(function(){
+document.getElementById("aiText").innerText=messages[i];
+i++;
+if(i>=messages.length){clearInterval(interval);}
+},800);
+
 
 setTimeout(function(){
 
@@ -225,15 +275,9 @@ document.getElementById("resultArea").innerHTML=
 
 "Our AI skin diagnostic engine is currently under advanced development and dermatology dataset training.<br><br>"+
 
-"This early interface represents the upcoming Verdant Root AI system designed to deliver affordable skin guidance for millions.<br><br>"+
+"The full platform will soon provide AI-powered skin pattern analysis, affordable routine recommendations, and dermatologist connectivity.<br><br>"+
 
-"The complete platform will soon introduce:<br>"+
-"• AI skin pattern recognition<br>"+
-"• Dermatologist-backed insights<br>"+
-"• Affordable routine suggestions<br>"+
-"• Progress tracking intelligence<br><br>"+
-
-"<em>This beta version is educational and not a medical diagnosis.</em>"+
+"<em>This beta interface demonstrates the upcoming Verdant Root system.</em>"+
 
 "</div>"+
 
@@ -241,7 +285,7 @@ document.getElementById("resultArea").innerHTML=
 "<a href='index.html'>Return to Home</a>"+
 "</div>";
 
-},2600);
+},3500);
 
 }
 
@@ -249,5 +293,4 @@ document.getElementById("resultArea").innerHTML=
 
 </body>
 </html>
-
 
