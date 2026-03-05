@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Verdant Root AI Skin Analysis</title>
+
+<title>Verdant Root | Skin Intake</title>
 
 <style>
 
 body{
-font-family: Georgia, serif;
-background:#f5f5f5;
 margin:0;
+font-family:Georgia,serif;
+background:#f6f6f6;
 }
 
 .header{
-background:#0f3d2e;
+background:#0b3b2e;
 color:white;
-padding:25px;
+padding:30px;
 text-align:center;
 font-size:28px;
 letter-spacing:2px;
 }
 
 .container{
-max-width:600px;
-margin:40px auto;
+max-width:650px;
+margin:50px auto;
 background:white;
-padding:35px;
+padding:40px;
 border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
 h2{
-color:#0f3d2e;
+color:#0b3b2e;
+margin-bottom:20px;
 }
 
 label{
+font-weight:bold;
 display:block;
 margin-top:15px;
-font-weight:bold;
 }
 
-input, select, textarea{
+input,select,textarea{
+
 width:100%;
-padding:10px;
-margin-top:5px;
+padding:12px;
+margin-top:6px;
 border-radius:6px;
 border:1px solid #ccc;
+font-size:15px;
+
 }
 
 button{
-margin-top:20px;
+
+margin-top:25px;
 width:100%;
-padding:15px;
-background:#0f3d2e;
+padding:16px;
+background:#0b3b2e;
 color:white;
 border:none;
 font-size:16px;
 cursor:pointer;
+
 }
 
 button:hover{
@@ -63,10 +70,12 @@ background:#145c46;
 }
 
 .result{
-margin-top:25px;
-padding:20px;
-background:#f1f8f5;
-border-left:5px solid #0f3d2e;
+
+margin-top:30px;
+padding:25px;
+background:#f1f7f4;
+border-left:5px solid #0b3b2e;
+
 }
 
 </style>
@@ -75,12 +84,12 @@ border-left:5px solid #0f3d2e;
 <body>
 
 <div class="header">
-Verdant Root | AI Skin Intake
+Verdant Root AI Skin Intake
 </div>
 
 <div class="container">
 
-<h2>Skin Intake Form</h2>
+<h2>Skin Analysis Intake Form</h2>
 
 <label>Your Name</label>
 <input type="text" id="name">
@@ -90,47 +99,50 @@ Verdant Root | AI Skin Intake
 
 <label>Primary Skin Concern</label>
 <select id="concern">
+
 <option>Acne</option>
 <option>Pigmentation</option>
 <option>Dry Skin</option>
 <option>Oily Skin</option>
 <option>Dark Spots</option>
 <option>Sensitivity</option>
+
 </select>
 
-<label>Describe Symptoms</label>
+<label>Describe Your Skin Symptoms</label>
+
 <textarea id="description" rows="4"></textarea>
 
-<button onclick="startAnalysis()">Begin AI Skin Intake</button>
+<button onclick="showResult()">Begin Skin Intake</button>
 
-<div id="resultArea"></div>
+<div id="result"></div>
 
 </div>
 
 <script>
 
-function startAnalysis(){
+function showResult(){
 
-var name = document.getElementById("name").value;
-var concern = document.getElementById("concern").value;
+var name=document.getElementById("name").value;
+var concern=document.getElementById("concern").value;
 
-document.getElementById("resultArea").innerHTML =
-"<div class='result'>" +
+document.getElementById("result").innerHTML=
 
-"<h3>Verdant Root Preliminary Intake Report</h3>" +
+"<div class='result'>"+
+"<h3>Verdant Root Intake Confirmation</h3>"+
 
-"<b>Name:</b> " + name + "<br>" +
-"<b>Primary Concern:</b> " + concern + "<br><br>" +
+"<p><b>Name:</b> "+name+"</p>"+
+"<p><b>Primary Concern:</b> "+concern+"</p>"+
 
-"Our AI dermatology guidance system is currently under development." +
+"<p>Your information has been recorded in the Verdant Root intake system.</p>"+
 
-"<br><br>Your skin concern has been recorded in our intake system." +
+"<p>Our AI-assisted dermatology guidance platform is currently under development.</p>"+
 
-"<br><br>Full AI skin analysis and dermatologist support will be available soon." +
+"<p>You will soon receive access to intelligent skin analysis and affordable dermatology guidance.</p>"+
 
-"<br><br>For early access contact:<br>" +
+"<p>For early access inquiries contact:</p>"+
 
-"<b>verdantroot@gmail.com</b>" +
+"<p><b>verdantroot@gmail.com</b></p>"+
 
 "</div>";
 
@@ -140,4 +152,5 @@ document.getElementById("resultArea").innerHTML =
 
 </body>
 </html>
+
 
