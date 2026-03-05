@@ -1,80 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Verdant Root</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Verdant Root</title>
 
 <style>
 
 body{
 margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-background:#f7f7f7;
-color:#111;
-}
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(180deg,#0b3d2e,#0f4f3c);
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+background:#0a0a0a;
 color:white;
-padding:20px;
 }
 
-.hero h1{
+header{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(180deg,#0f3b2e,#0a0a0a);
+}
+
+.logo{
+width:140px;
+margin-bottom:20px;
+}
+
+h1{
 font-size:48px;
-margin:10px 0;
-letter-spacing:1px;
+letter-spacing:2px;
+margin:0;
 }
 
-.hero p{
-font-size:20px;
+.tagline{
+margin-top:15px;
+font-size:18px;
+color:#cfd9d4;
 max-width:600px;
-opacity:0.9;
+margin-left:auto;
+margin-right:auto;
 }
 
 .button{
-margin-top:30px;
-padding:16px 34px;
-background:#c6a86b;
-color:#000;
+display:inline-block;
+margin-top:35px;
+padding:14px 30px;
+border:1px solid #caa96b;
+color:#caa96b;
 text-decoration:none;
-font-weight:600;
-border-radius:30px;
+font-size:16px;
+border-radius:6px;
+transition:0.3s;
+}
+
+.button:hover{
+background:#caa96b;
+color:black;
 }
 
 .section{
-padding:90px 25px;
+padding:80px 20px;
 text-align:center;
 max-width:900px;
 margin:auto;
 }
 
 .section h2{
-font-size:34px;
+font-size:32px;
 margin-bottom:20px;
 }
 
 .section p{
-font-size:18px;
+color:#d2d2d2;
 line-height:1.7;
-color:#444;
 }
 
-.founder{
-background:white;
-}
-
-.footer{
-background:#0b3d2e;
-color:white;
+footer{
+background:#111;
+padding:40px;
 text-align:center;
-padding:50px 20px;
+color:#aaa;
 }
 
 </style>
@@ -83,60 +89,90 @@ padding:50px 20px;
 
 <body>
 
-<div class="hero">
+<header>
+
+<img src="verdantroot-logo.png" class="logo">
 
 <h1>Verdant Root</h1>
 
-<p>AI-Assisted Skin Intelligence.  
-Affordable dermatology guidance for everyone.</p>
+<p class="tagline">
+AI-Assisted Skin Intelligence designed to help people understand their skin before visiting a clinic.
+</p>
 
-<a class="button" href="analysis.html">Start Skin Intake</a>
+<a href="analysis.html" class="button">Start Skin Analysis</a>
 
-</div>
+</header>
 
-<div class="section">
+<section class="section">
 
-<h2>The Problem</h2>
+<h2>About Verdant Root</h2>
 
-<p>Millions of people struggle with acne, pigmentation, and skin conditions but access to dermatology guidance is often expensive or difficult to reach.</p>
+<p>
+Verdant Root is an early-stage concept focused on building affordable AI-assisted skin guidance.
+The goal is to help people, especially in Tier-2 and Tier-3 regions, understand their skin concerns
+before visiting a dermatologist.
+</p>
 
-</div>
+<p>
+The platform aims to combine artificial intelligence, dermatology awareness,
+and accessible digital tools to make skin guidance more affordable and more informed.
+</p>
 
-<div class="section">
+</section>
 
-<h2>The Verdant Root Vision</h2>
+<section class="section">
 
-<p>Verdant Root is building an AI-assisted platform that helps people understand their skin concerns and access affordable dermatology guidance.</p>
+<h2>How It Works</h2>
 
-</div>
+<p>
+1. Upload a facial image and answer a few guided questions.
+</p>
 
-<div class="section">
+<p>
+2. The system analyzes visible patterns related to common skin concerns.
+</p>
 
-<h2>Technology</h2>
+<p>
+3. Users receive general guidance and may connect with dermatology professionals if needed.
+</p>
 
-<p>Our platform explores computer vision, skin pattern detection, and intelligent guidance systems to make early skin analysis more accessible.</p>
+</section>
 
-</div>
-
-<div class="section founder">
+<section class="section">
 
 <h2>Founder</h2>
 
-<p><strong>Sumit Kadian</strong></p>
+<p>
+Verdant Root is being built by <b>Sumit Kadian</b>, a high school student in India preparing for the National Eligibility cum Entrance Test (NEET).
+</p>
 
-<p>High school student and aspiring healthcare innovator building Verdant Root to make intelligent skin guidance accessible and affordable.</p>
+<p>
+The vision is to explore how technology and healthcare awareness can work together
+to make early skin guidance more accessible and affordable.
+</p>
 
-</div>
+</section>
 
-<div class="footer">
+<section class="section">
 
-<p>Contact</p>
+<h2>Contact</h2>
 
-<p>verdantroot@gmail.com</p>
+<p>
+For collaboration, ideas, or questions:
+</p>
 
-<p>© Verdant Root</p>
+<p>
+verdantroot@gmail.com
+</p>
 
-</div>
+</section>
+
+<footer>
+
+Verdant Root © 2026  
+AI-Assisted Skin Guidance Platform (Concept Stage)
+
+</footer>
 
 </body>
 </html>
