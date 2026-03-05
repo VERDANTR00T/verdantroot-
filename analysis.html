@@ -3,117 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AI Skin Intelligence | Verdant Root</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top, #123d32, #071a15);
-    color: #ffffff;
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:radial-gradient(circle at top,#123d32,#071a15);
+color:white;
 }
 
-.wrapper {
-    max-width: 800px;
-    margin: 70px auto;
-    padding: 50px;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(25px);
-    border-radius: 20px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+.wrapper{
+max-width:800px;
+margin:70px auto;
+padding:50px;
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(25px);
+border-radius:20px;
+box-shadow:0 30px 80px rgba(0,0,0,0.6);
 }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    text-align: center;
-    font-size: 38px;
+h1{
+font-family:'Playfair Display',serif;
+text-align:center;
+font-size:38px;
 }
 
-.subtitle {
-    text-align: center;
-    opacity: 0.75;
-    margin-bottom: 40px;
+.subtitle{
+text-align:center;
+opacity:0.75;
+margin-bottom:40px;
 }
 
-.step {
-    display: none;
-    animation: fade 0.6s ease;
+.step{
+display:none;
+animation:fade 0.6s ease;
 }
 
-.step.active {
-    display: block;
+.step.active{
+display:block;
 }
 
-@keyframes fade {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+@keyframes fade{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;transform:translateY(0);}
 }
 
-label {
-    display: block;
-    margin-top: 25px;
-    font-size: 13px;
-    letter-spacing: 1px;
+label{
+display:block;
+margin-top:25px;
+font-size:13px;
+letter-spacing:1px;
 }
 
-input, select, textarea {
-    width: 100%;
-    padding: 14px;
-    margin-top: 8px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 10px;
-    color: white;
-    font-size: 14px;
+input,select,textarea{
+width:100%;
+padding:14px;
+margin-top:8px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.2);
+border-radius:10px;
+color:white;
+font-size:14px;
 }
 
-button {
-    margin-top: 35px;
-    padding: 14px 30px;
-    border: 1px solid #d4af37;
-    background: transparent;
-    color: white;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.3s;
+button{
+margin-top:35px;
+padding:14px 30px;
+border:1px solid #d4af37;
+background:transparent;
+color:white;
+letter-spacing:2px;
+cursor:pointer;
+transition:0.3s;
 }
 
-button:hover {
-    background: #d4af37;
-    color: #0b2e25;
+button:hover{
+background:#d4af37;
+color:#0b2e25;
 }
 
-.progress {
-    width: 100%;
-    height: 6px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    margin-top: 30px;
-    overflow: hidden;
+.progress{
+width:100%;
+height:6px;
+background:rgba(255,255,255,0.1);
+border-radius:10px;
+margin-top:30px;
+overflow:hidden;
 }
 
-.progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #d4af37;
-    transition: width 2.5s ease;
+.progress-bar{
+height:100%;
+width:0%;
+background:#d4af37;
+transition:width 2.5s ease;
 }
 
-.result-card {
-    margin-top: 30px;
-    padding: 35px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 15px;
-    line-height: 1.8;
+.result-card{
+margin-top:30px;
+padding:35px;
+background:rgba(255,255,255,0.08);
+border-radius:15px;
+line-height:1.8;
 }
 
-.score {
-    font-size: 28px;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 15px;
+.home-icon{
+margin-top:30px;
+text-align:center;
+font-size:28px;
+cursor:pointer;
 }
+
+.home-icon a{
+text-decoration:none;
+color:white;
+}
+
 </style>
 </head>
 
@@ -124,7 +133,10 @@ button:hover {
 <h1>AI Skin Intelligence</h1>
 <p class="subtitle">Clinical-grade preliminary digital evaluation</p>
 
+<!-- STEP 1 -->
+
 <div class="step active" id="step1">
+
 <label>Full Name</label>
 <input type="text" id="name">
 
@@ -132,26 +144,40 @@ button:hover {
 <input type="number" id="age">
 
 <button onclick="nextStep()">CONTINUE</button>
+
 </div>
 
+
+<!-- STEP 2 -->
+
 <div class="step" id="step2">
+
 <label>Primary Skin Concern</label>
+
 <select id="concern">
+
 <option>Acne</option>
 <option>Pigmentation</option>
 <option>Dryness</option>
 <option>Oiliness</option>
 <option>Dark Spots</option>
 <option>Sensitivity</option>
+
 </select>
 
 <label>Describe Symptoms</label>
+
 <textarea id="description" rows="4"></textarea>
 
 <button onclick="startAnalysis()">BEGIN AI ANALYSIS</button>
+
 </div>
 
+
+<!-- STEP 3 -->
+
 <div class="step" id="step3">
+
 <p>Analyzing skin biomarkers...</p>
 
 <div class="progress">
@@ -159,43 +185,66 @@ button:hover {
 </div>
 
 <div id="resultArea"></div>
+
 </div>
 
 </div>
+
 
 <script>
-function nextStep() {
-    document.getElementById("step1").classList.remove("active");
-    document.getElementById("step2").classList.add("active");
+
+function nextStep(){
+
+document.getElementById("step1").classList.remove("active");
+document.getElementById("step2").classList.add("active");
+
 }
 
-function startAnalysis() {
-    document.getElementById("step2").classList.remove("active");
-    document.getElementById("step3").classList.add("active");
+function startAnalysis(){
 
-    document.getElementById("bar").style.width = "100%";
+document.getElementById("step2").classList.remove("active");
+document.getElementById("step3").classList.add("active");
 
-    setTimeout(function() {
+document.getElementById("bar").style.width="100%";
 
-        var name = document.getElementById("name").value;
-        var concern = document.getElementById("concern").value;
+setTimeout(function(){
 
-        var score = Math.floor(Math.random() * 20) + 75;
+var name=document.getElementById("name").value;
+var concern=document.getElementById("concern").value;
 
-        document.getElementById("resultArea").innerHTML =
-        "<div class='result-card'>" +
-        "<div class='score'>Skin Health Score: " + score + "/100</div>" +
-        "<strong>Subject:</strong> " + name + "<br>" +
-        "<strong>Primary Concern:</strong> " + concern + "<br><br>" +
-        "AI pattern evaluation indicates moderate dermal imbalance associated with the selected concern. " +
-        "Barrier repair, ingredient precision, hydration stability, and dermatological consultation are recommended." +
-        "<br><br><em>This digital evaluation is educational and not a medical diagnosis.</em>" +
-        "<br><br><button onclick=\"window.location.href='index.html'\">RETURN HOME</button>" +
-        "</div>";
+document.getElementById("resultArea").innerHTML=
 
-    }, 2600);
+"<div class='result-card'>"+
+
+"<h2>Verdant Root AI Beta Program</h2>"+
+
+"<strong>Subject:</strong> "+name+"<br>"+
+"<strong>Primary Concern:</strong> "+concern+"<br><br>"+
+
+"Our AI skin diagnostic engine is currently undergoing advanced development and clinical dataset training.<br><br>"+
+
+"Your submitted information has been recorded to improve Verdant Root's AI dermatology intelligence system.<br><br>"+
+
+"The full AI skin analysis platform will soon provide:<br>"+
+"• AI skin pattern recognition<br>"+
+"• Dermatologist-backed recommendations<br>"+
+"• Affordable skincare guidance for Tier-2 & Tier-3 users<br>"+
+"• Progress tracking and personalized routines<br><br>"+
+
+"<em>This version is part of an early beta research environment and does not provide medical diagnosis.</em>"+
+
+"</div>"+
+
+"<div class='home-icon'>"+
+"<a href='index.html'>🏡</a>"+
+"</div>";
+
+},2600);
+
 }
+
 </script>
 
 </body>
 </html>
+
