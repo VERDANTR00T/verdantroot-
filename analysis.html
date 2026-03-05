@@ -180,18 +180,26 @@ function startAnalysis() {
         var name = document.getElementById("name").value;
         var concern = document.getElementById("concern").value;
 
-        var score = Math.floor(Math.random() * 20) + 75;
+        
 
         document.getElementById("resultArea").innerHTML =
-        "<div class='result-card'>" +
-        "<div class='score'>Skin Health Score: " + score + "/100</div>" +
-        "<strong>Subject:</strong> " + name + "<br>" +
-        "<strong>Primary Concern:</strong> " + concern + "<br><br>" +
-        "AI pattern evaluation indicates moderate dermal imbalance associated with the selected concern. " +
-        "Barrier repair, ingredient precision, hydration stability, and dermatological consultation are recommended." +
-        "<br><br><em>This digital evaluation is educational and not a medical diagnosis.</em>" +
-        "<br><br><button onclick=\"window.location.href='index.html'\">RETURN HOME</button>" +
-        "</div>";
+"<div class='result-card'>" +
+"<h3>Verdant Root Intake Report</h3><br>" +
+
+"<b>Name:</b> " + name + "<br>" +
+"<b>Primary Concern:</b> " + concern + "<br><br>" +
+
+"Our AI skin analysis system is currently under development." +
+
+"<br><br>Your information has been securely recorded." +
+
+"<br><br>Full AI skin report will be available soon." +
+
+"<br><br>For consultation contact:" +
+
+"<br>verdantroot@gmail.com" +
+
+"</div>";
 
     }, 2600);
 }
