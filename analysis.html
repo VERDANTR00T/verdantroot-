@@ -32,7 +32,7 @@ button{margin-top:35px;padding:14px 30px;border:1px solid #d4af37;background:tra
 button:hover{background:#d4af37;color:#0b2e25;}
 .progress{width:100%;height:6px;background:rgba(255,255,255,0.1);border-radius:10px;margin-top:30px;overflow:hidden;}
 .progress-bar{height:100%;width:0%;background:#d4af37;transition:width 4s ease;}
-.scan-box{margin-top:30px;height:220px;border-radius:15px;background:rgba(255,255,255,0.05);position:relative;overflow:hidden;box-shadow:0 0 20px rgba(212,175,55,0.3);}
+.scan-box{margin-top:30px;height:220px;border-radius:15px;background:rgba(255,255,255,0.05);position:relative;overflow:hidden;box-shadow:0 0 30px rgba(212,175,55,0.3);}
 .scan-line{position:absolute;width:100%;height:3px;background:#d4af37;animation:scan 2s infinite;}
 @keyframes scan{0%{top:0;}50%{top:100%;}100%{top:0;}}
 .ai-text{margin-top:20px;font-size:14px;opacity:0.85;letter-spacing:0.5px;transition:0.4s ease;}
@@ -45,9 +45,16 @@ button:hover{background:#d4af37;color:#0b2e25;}
 .home-btn a:hover .icon{border-color:#0b2e25;color:#0b2e25;}
 .feature-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;margin-top:30px;}
 .feature-card{background:rgba(255,255,255,0.05);backdrop-filter:blur(12px);border-radius:18px;padding:20px;width:220px;border:1px solid rgba(255,255,255,0.15);transition:0.3s;}
-.feature-card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(212,175,55,0.3);}
+.feature-card:hover{transform:translateY(-8px);box-shadow:0 15px 50px rgba(212,175,55,0.3);}
 .feature-card h4{font-family:'Playfair Display',serif;color:#d4af37;margin-bottom:12px;}
 .feature-card p{font-size:13px;line-height:1.5;opacity:0.8;}
+/* 3D metrics bars */
+.metrics{margin-top:25px;display:flex;justify-content:space-between;gap:15px;}
+.metric-card{flex:1;background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);padding:15px;border-radius:12px;text-align:center;box-shadow:0 8px 25px rgba(0,0,0,0.3);transition:0.3s;}
+.metric-card h5{margin:0;color:#d4af37;font-family:'Playfair Display',serif;font-size:16px;}
+.metric-card .bar{height:6px;background:rgba(212,175,55,0.4);border-radius:6px;margin-top:10px;overflow:hidden;}
+.metric-card .bar-inner{height:100%;width:0%;background:#d4af37;border-radius:6px;transition:width 2.5s ease;}
+.metric-card:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(212,175,55,0.4);}
 </style>
 </head>
 <body>
@@ -93,6 +100,7 @@ button:hover{background:#d4af37;color:#0b2e25;}
 <div class="progress-bar" id="bar"></div>
 </div>
 <p class="ai-text" id="aiText">Initializing AI diagnostic engine...</p>
+<div class="metrics" id="metricsContainer"></div>
 <div id="resultArea"></div>
 </div>
 
@@ -107,6 +115,7 @@ function startAnalysis(){
 document.getElementById("step2").classList.remove("active");
 document.getElementById("step3").classList.add("active");
 document.getElementById("bar").style.width="100%";
+
 var messages=[
 "Initializing AI diagnostic engine...",
 "Mapping facial dermal zones...",
@@ -120,9 +129,19 @@ document.getElementById("aiText").innerText=messages[i];
 i++;
 if(i>=messages.length){clearInterval(interval);}
 },900);
+
 setTimeout(function(){
 var name=document.getElementById("name").value;
 var concern=document.getElementById("concern").value;
+
+// metrics example
+var metricsHTML="";
+var metrics=[{title:"Hydration",value:80},{title:"Acne",value:60},{title:"Pigmentation",value:70}];
+metrics.forEach(m=>{
+metricsHTML+="<div class='metric-card'><h5>"+m.title+"</h5><div class='bar'><div class='bar-inner' style='width:"+m.value+"%'></div></div></div>";
+});
+document.getElementById("metricsContainer").innerHTML=metricsHTML;
+
 document.getElementById("resultArea").innerHTML=
 "<div class='result-card'>"+
 "<div class='beta-title'>Verdant Root AI Beta Program</div>"+
