@@ -1,144 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Verdant Root | Luxury AI Skin Intelligence</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:#f3efe8;
-color:#1a1a1a;
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0f2f26;
+    color: #ffffff;
 }
 
-nav{
-background:#0f2f26;
-color:white;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+header {
+    background: #0c3a2e;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav h1{
-font-family:'Playfair Display',serif;
-font-size:22px;
-letter-spacing:1px;
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
 }
 
-.hero{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1920');
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
+.tagline {
+    font-size: 14px;
+    opacity: 0.8;
 }
 
-.hero h2{
-font-family:'Playfair Display',serif;
-font-size:52px;
-margin-bottom:20px;
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
 }
 
-.hero p{
-font-size:18px;
-max-width:600px;
-margin:auto;
-opacity:0.9;
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    max-width: 600px;
 }
 
-.button{
-margin-top:40px;
-padding:15px 35px;
-border:1px solid #c6a75e;
-background:transparent;
-color:white;
-cursor:pointer;
-font-size:14px;
-letter-spacing:1px;
-transition:0.3s;
+.hero p {
+    max-width: 500px;
+    font-size: 18px;
+    margin-top: 15px;
 }
 
-.button:hover{
-background:#c6a75e;
-color:#0f2f26;
+button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
 }
 
-.section{
-padding:90px 10%;
-background:white;
-text-align:center;
+section {
+    padding: 80px 40px;
+    max-width: 900px;
+    margin: auto;
 }
 
-.section h3{
-font-family:'Playfair Display',serif;
-font-size:34px;
-margin-bottom:20px;
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
-.section p{
-max-width:700px;
-margin:auto;
-color:#555;
-line-height:1.7;
+.about p, .founder p, .contact p {
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
 }
 
-footer{
-background:#111;
-color:#aaa;
-text-align:center;
-padding:30px;
-font-size:13px;
+.footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    opacity: 0.6;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<h1>Verdant Root</h1>
-<span style="font-size:13px;opacity:0.8;">AI Skin Intelligence</span>
-</nav>
+<header>
+    <div class="logo">Verdant Root</div>
+    <div class="tagline">AI Skin Intelligence</div>
+</header>
 
 <div class="hero">
-<div>
-<h2>Elevated Digital Dermatology</h2>
-<p>
-AI-powered preliminary skin guidance designed for smarter first decisions before visiting a clinic.
-</p>
-
-<a href="scan.html">
-<button class="button">BEGIN SKIN ANALYSIS</button>
-</a>
-
-<p style="margin-top:20px;font-size:13px;opacity:0.7;">
-AI Module Currently in Beta Phase
-</p>
-
-</div>
+    <h1>Elevated Digital Dermatology</h1>
+    <p>AI-powered preliminary skin guidance designed to support confident decisions before stepping into a clinic.</p>
+    <button onclick="window.location.href='analysis.html'">BEGIN SKIN ANALYSIS</button>
 </div>
 
-<div class="section">
-<h3>Why Verdant Root</h3>
-<p>
-We aim to make early skin assessment more affordable and accessible for emerging India, while encouraging responsible medical consultation.
-</p>
-</div>
+<section class="about">
+    <h2>About Verdant Root</h2>
+    <p>
+    Verdant Root was created with a singular vision — to combine clinical reasoning with artificial intelligence 
+    to provide accessible, intelligent skin insights. We believe technology should not replace dermatologists, 
+    but empower individuals with structured understanding before professional consultation.
+    </p>
+    <p>
+    Our system evaluates visible indicators and user-reported concerns to offer preliminary guidance rooted in 
+    dermatological research. Every insight is delivered with clarity, responsibility, and respect for medical standards.
+    </p>
+</section>
 
-<footer>
-© 2026 Verdant Root. Educational guidance only. Not a medical diagnosis.
-</footer>
+<section class="founder">
+    <h2>Founder</h2>
+    <p>
+    Founded by <strong>Sumit Kadian</strong>, Verdant Root reflects a commitment to science-driven healthcare 
+    innovation. Built with a background in medical studies and a passion for intelligent systems, 
+    the platform represents an early step toward future AI-assisted clinical tools.
+    </p>
+</section>
+
+<section class="contact">
+    <h2>Contact</h2>
+    <p>
+    For collaboration, feedback, or direct inquiries:
+    </p>
+    <p>
+    Email: <strong>verdantroot@gmail.com</strong>
+    </p>
+</section>
+
+<div class="footer">
+    © 2026 Verdant Root. All rights reserved.
+</div>
 
 </body>
 </html>
-
