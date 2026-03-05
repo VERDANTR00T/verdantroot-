@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Skin Analysis | Verdant Root</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -13,36 +13,66 @@ body {
     font-family: 'Inter', sans-serif;
     background: #0f2f26;
     color: white;
-    text-align: center;
-    padding: 60px 20px;
+    padding: 40px 20px;
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 40px;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 10px;
 }
 
-p {
-    max-width: 600px;
-    margin: 20px auto;
-    line-height: 1.7;
+.subtitle {
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+.form-container {
+    max-width: 700px;
+    margin: auto;
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 12px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
     opacity: 0.9;
 }
 
-.container {
-    margin-top: 40px;
-    padding: 40px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 10px;
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
 }
 
 button {
     margin-top: 30px;
-    padding: 14px 30px;
+    width: 100%;
+    padding: 15px;
     background: transparent;
     border: 1px solid #d4af37;
     color: white;
+    font-size: 14px;
+    letter-spacing: 2px;
     cursor: pointer;
+}
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    display: none;
 }
 </style>
 </head>
@@ -50,18 +80,49 @@ button {
 <body>
 
 <h1>AI Skin Analysis</h1>
+<p class="subtitle">Provide your details for a structured preliminary assessment</p>
 
-<p>
-This intelligent module is currently under development.
-Our dermatological AI framework is being structured for clinical-grade preliminary assessments.
-</p>
+<div class="form-container">
 
-<div class="container">
-<p><strong>Status:</strong> Private Beta Build</p>
-<p>Expected Upgrade: Advanced Diagnostic Interface</p>
+<label>Full Name</label>
+<input type="text" id="name">
+
+<label>Age</label>
+<input type="number" id="age">
+
+<label>Primary Skin Concern</label>
+<select id="concern">
+<option>Acne</option>
+<option>Pigmentation</option>
+<option>Dryness</option>
+<option>Oiliness</option>
+<option>Dark Spots</option>
+<option>Sensitivity</option>
+</select>
+
+<label>Describe Your Symptoms</label>
+<textarea id="description" rows="4"></textarea>
+
+<button onclick="generateResult()">GENERATE PRELIMINARY INSIGHT</button>
+
+<div class="result" id="resultBox"></div>
+
 </div>
 
-<button onclick="window.location.href='index.html'">Return Home</button>
+<script>
+function generateResult() {
+    var name = document.getElementById("name").value;
+    var concern = document.getElementById("concern").value;
+
+    var resultBox = document.getElementById("resultBox");
+
+    resultBox.style.display = "block";
+    resultBox.innerHTML = "<strong>Preliminary Insight for " + name + ":</strong><br><br>" +
+    "Based on the selected concern (" + concern + "), our AI framework suggests maintaining a structured skincare routine, " +
+    "consistent hydration, and considering consultation with a certified dermatologist for advanced evaluation. " +
+    "<br><br><em>This is not a medical diagnosis.</em>";
+}
+</script>
 
 </body>
 </html>
