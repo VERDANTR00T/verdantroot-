@@ -3,93 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skin Analysis | Verdant Root</title>
+<title>AI Skin Intelligence | Verdant Root</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #0f2f26;
-    color: white;
-    padding: 40px 20px;
+    background: radial-gradient(circle at top, #123d32, #071a15);
+    color: #ffffff;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 70px auto;
+    padding: 50px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(25px);
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
     text-align: center;
     font-size: 38px;
-    margin-bottom: 10px;
 }
 
 .subtitle {
     text-align: center;
-    opacity: 0.8;
+    opacity: 0.75;
     margin-bottom: 40px;
 }
 
-.form-container {
-    max-width: 700px;
-    margin: auto;
-    background: rgba(255,255,255,0.05);
-    padding: 40px;
-    border-radius: 12px;
+.step {
+    display: none;
+    animation: fade 0.6s ease;
+}
+
+.step.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 
 label {
     display: block;
-    margin-top: 20px;
-    font-size: 14px;
-    opacity: 0.9;
+    margin-top: 25px;
+    font-size: 13px;
+    letter-spacing: 1px;
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin-top: 8px;
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 6px;
+    border-radius: 10px;
     color: white;
     font-size: 14px;
 }
 
 button {
-    margin-top: 30px;
-    width: 100%;
-    padding: 15px;
-    background: transparent;
+    margin-top: 35px;
+    padding: 14px 30px;
     border: 1px solid #d4af37;
+    background: transparent;
     color: white;
-    font-size: 14px;
     letter-spacing: 2px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.result {
+button:hover {
+    background: #d4af37;
+    color: #0b2e25;
+}
+
+.progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
     margin-top: 30px;
-    padding: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #d4af37;
+    transition: width 2.5s ease;
+}
+
+.result-card {
+    margin-top: 30px;
+    padding: 35px;
     background: rgba(255,255,255,0.08);
-    border-radius: 8px;
-    display: none;
+    border-radius: 15px;
+    line-height: 1.8;
+}
+
+.score {
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>AI Skin Analysis</h1>
-<p class="subtitle">Provide your details for a structured preliminary assessment</p>
+<div class="wrapper">
 
-<div class="form-container">
+<h1>AI Skin Intelligence</h1>
+<p class="subtitle">Clinical-grade preliminary digital evaluation</p>
 
+<div class="step active" id="step1">
 <label>Full Name</label>
 <input type="text" id="name">
 
 <label>Age</label>
 <input type="number" id="age">
 
+<button onclick="nextStep()">CONTINUE</button>
+</div>
+
+<div class="step" id="step2">
 <label>Primary Skin Concern</label>
 <select id="concern">
 <option>Acne</option>
@@ -100,29 +145,58 @@ button {
 <option>Sensitivity</option>
 </select>
 
-<label>Describe Your Symptoms</label>
+<label>Describe Symptoms</label>
 <textarea id="description" rows="4"></textarea>
 
-<button onclick="generateResult()">GENERATE PRELIMINARY INSIGHT</button>
+<button onclick="startAnalysis()">BEGIN AI ANALYSIS</button>
+</div>
 
-<div class="result" id="resultBox"></div>
+<div class="step" id="step3">
+<p>Analyzing skin biomarkers...</p>
+
+<div class="progress">
+<div class="progress-bar" id="bar"></div>
+</div>
+
+<div id="resultArea"></div>
+</div>
 
 </div>
 
 <script>
-function generateResult() {
-    var name = document.getElementById("name").value;
-    var concern = document.getElementById("concern").value;
+function nextStep() {
+    document.getElementById("step1").classList.remove("active");
+    document.getElementById("step2").classList.add("active");
+}
 
-    var resultBox = document.getElementById("resultBox");
+function startAnalysis() {
+    document.getElementById("step2").classList.remove("active");
+    document.getElementById("step3").classList.add("active");
 
-    resultBox.style.display = "block";
-    resultBox.innerHTML = "<strong>Preliminary Insight for " + name + ":</strong><br><br>" +
-    "Based on the selected concern (" + concern + "), our AI framework suggests maintaining a structured skincare routine, " +
-    "consistent hydration, and considering consultation with a certified dermatologist for advanced evaluation. " +
-    "<br><br><em>This is not a medical diagnosis.</em>";
+    document.getElementById("bar").style.width = "100%";
+
+    setTimeout(function() {
+
+        var name = document.getElementById("name").value;
+        var concern = document.getElementById("concern").value;
+
+        var score = Math.floor(Math.random() * 20) + 75;
+
+        document.getElementById("resultArea").innerHTML =
+        "<div class='result-card'>" +
+        "<div class='score'>Skin Health Score: " + score + "/100</div>" +
+        "<strong>Subject:</strong> " + name + "<br>" +
+        "<strong>Primary Concern:</strong> " + concern + "<br><br>" +
+        "AI pattern evaluation indicates moderate dermal imbalance associated with the selected concern. " +
+        "Barrier repair, ingredient precision, hydration stability, and dermatological consultation are recommended." +
+        "<br><br><em>This digital evaluation is educational and not a medical diagnosis.</em>" +
+        "<br><br><button onclick=\"window.location.href='index.html'\">RETURN HOME</button>" +
+        "</div>";
+
+    }, 2600);
 }
 </script>
 
 </body>
 </html>
+
