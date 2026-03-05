@@ -1,148 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verdant Root | Luxury AI Skin Intelligence</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+<title>Verdant Root | AI Skin Guidance</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #0f2f26;
-    color: #ffffff;
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:radial-gradient(circle at top,#123d32,#071a15);
+    color:white;
+    overflow-x:hidden;
 }
-
-header {
-    background: #0c3a2e;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.tagline {
-    font-size: 14px;
-    opacity: 0.8;
-}
+a {text-decoration:none; color:inherit;}
 
 .hero {
-    height: 90vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px;
+    background:linear-gradient(135deg, rgba(18,61,50,0.85), rgba(7,26,21,0.85));
+    background-size: 200% 200%;
+    animation: gradientMove 10s ease infinite;
 }
-
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
 .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    max-width: 600px;
+    font-family:'Playfair Display',serif;
+    font-size:48px;
+    margin:0;
 }
-
 .hero p {
-    max-width: 500px;
-    font-size: 18px;
-    margin-top: 15px;
+    font-size:18px;
+    opacity:0.8;
+    margin:15px 0 40px;
+}
+.hero button {
+    padding:14px 40px;
+    font-size:16px;
+    border:1px solid #d4af37;
+    background:transparent;
+    color:white;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.hero button:hover {
+    background:#d4af37;
+    color:#0b2e25;
 }
 
-button {
-    margin-top: 30px;
-    padding: 15px 30px;
-    background: transparent;
-    border: 1px solid #d4af37;
-    color: #ffffff;
-    font-size: 14px;
-    letter-spacing: 2px;
-    cursor: pointer;
+.section {
+    padding:80px 20px;
+    text-align:center;
 }
 
-section {
-    padding: 80px 40px;
-    max-width: 900px;
-    margin: auto;
+.section h2{
+    font-family:'Playfair Display',serif;
+    font-size:36px;
+    margin-bottom:30px;
+}
+.section p{
+    max-width:700px;
+    margin:0 auto 20px auto;
+    line-height:1.8;
+    opacity:0.8;
 }
 
-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    margin-bottom: 20px;
+.cards {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    margin-top:40px;
+}
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    width:260px;
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.15);
+}
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
+.card h3{
+    font-family:'Playfair Display',serif;
+    margin-bottom:15px;
+    font-size:20px;
+    color:#d4af37;
 }
 
-.about p, .founder p, .contact p {
-    line-height: 1.8;
-    font-size: 16px;
-    opacity: 0.9;
+.testimonials{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+    margin-top:40px;
+}
+.testimonial-card{
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(15px);
+    border-radius:18px;
+    padding:25px;
+    max-width:300px;
+    border:1px solid rgba(255,255,255,0.15);
+}
+.testimonial-card p{
+    font-size:14px;
+    line-height:1.6;
+    opacity:0.8;
+}
+.testimonial-card strong{
+    display:block;
+    margin-top:12px;
+    color:#d4af37;
 }
 
-.footer {
-    text-align: center;
-    padding: 30px;
-    font-size: 14px;
-    opacity: 0.6;
-    border-top: 1px solid rgba(255,255,255,0.1);
+.contact a{
+    display:inline-block;
+    margin-top:15px;
+    font-size:18px;
+    color:#d4af37;
+    transition:0.3s;
+}
+.contact a:hover{
+    color:white;
+}
+
+footer{
+    background:#071a15;
+    text-align:center;
+    padding:30px 20px;
+    font-size:14px;
+    opacity:0.7;
 }
 </style>
 </head>
-
 <body>
 
-<header>
-    <div class="logo">Verdant Root</div>
-    <div class="tagline">AI Skin Intelligence</div>
-</header>
-
+<!-- HERO -->
 <div class="hero">
-    <h1>Elevated Digital Dermatology</h1>
-    <p>AI-powered preliminary skin guidance designed to support confident decisions before stepping into a clinic.</p>
-    <button onclick="window.location.href='analysis.html'">BEGIN SKIN ANALYSIS</button>
+<h1>Premium AI Skin Guidance</h1>
+<p>Affordable dermatology insights with smart AI first step</p>
+<button onclick="window.location.href='analysis.html'">Start Skin Analysis</button>
 </div>
 
-<section class="about">
-    <h2>About Verdant Root</h2>
-    <p>
-    Verdant Root was created with a singular vision — to combine clinical reasoning with artificial intelligence 
-    to provide accessible, intelligent skin insights. We believe technology should not replace dermatologists, 
-    but empower individuals with structured understanding before professional consultation.
-    </p>
-    <p>
-    Our system evaluates visible indicators and user-reported concerns to offer preliminary guidance rooted in 
-    dermatological research. Every insight is delivered with clarity, responsibility, and respect for medical standards.
-    </p>
-</section>
-
-<section class="founder">
-    <h2>Founder</h2>
-    <p>
-    Founded by <strong>Sumit Kadian</strong>, Verdant Root reflects a commitment to science-driven healthcare 
-    innovation. Built with a background in medical studies and a passion for intelligent systems, 
-    the platform represents an early step toward future AI-assisted clinical tools.
-    </p>
-</section>
-
-<section class="contact">
-    <h2>Contact</h2>
-    <p>
-    For collaboration, feedback, or direct inquiries:
-    </p>
-    <p>
-    Email: <strong>verdantroot@gmail.com</strong>
-    </p>
-</section>
-
-<div class="footer">
-    © 2026 Verdant Root. All rights reserved.
+<!-- HOW IT WORKS -->
+<div class="section">
+<h2>How It Works</h2>
+<div class="cards">
+<div class="card">
+<h3>Step 1: Answer Questions</h3>
+<p>Fill simple guided questions about your skin type and concerns.</p>
 </div>
+<div class="card">
+<h3>Step 2: AI Analysis</h3>
+<p>Our AI scans your uploaded image and evaluates key skin patterns.</p>
+</div>
+<div class="card">
+<h3>Step 3: Smart Guidance</h3>
+<p>Get affordable, practical, and educational skin care insights.</p>
+</div>
+</div>
+</div>
+
+<!-- FOUNDER -->
+<div class="section" style="background:rgba(255,255,255,0.03);backdrop-filter:blur(15px);border-radius:20px;margin:40px;">
+<h2>Founder</h2>
+<p>Verdant Root was founded by <strong>Sumit Kadian</strong> to make premium skin guidance affordable and accessible. Millions in tier-2 & tier-3 cities struggle without proper dermatology support.</p>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="section">
+<h2>What Users Say</h2>
+<div class="testimonials">
+<div class="testimonial-card">
+<p>"The AI guidance is simple, yet very helpful. Loved the beta experience!"</p>
+<strong>- Aanya</strong>
+</div>
+<div class="testimonial-card">
+<p>"Finally a platform that feels premium but affordable." </p>
+<strong>- Rohan</strong>
+</div>
+<div class="testimonial-card">
+<p>"The step-by-step scan made me confident to try the suggested routine." </p>
+<strong>- Priya</strong>
+</div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div class="section contact" style="background:rgba(255,255,255,0.03);backdrop-filter:blur(15px);border-radius:20px;margin:40px;">
+<h2>Contact</h2>
+<p>Email us directly:</p>
+<a href="mailto:verdantroot@gmail.com">verdantroot@gmail.com</a>
+</div>
+
+<footer>
+© 2026 Verdant Root | All Rights Reserved
+</footer>
 
 </body>
 </html>
+    
