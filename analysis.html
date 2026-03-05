@@ -111,16 +111,26 @@ border-radius:15px;
 line-height:1.8;
 }
 
-.home-icon{
-margin-top:30px;
+.home-btn{
+margin-top:35px;
 text-align:center;
-font-size:28px;
-cursor:pointer;
 }
 
-.home-icon a{
+.home-btn a{
+display:inline-block;
+padding:14px 28px;
+border:1px solid #d4af37;
+border-radius:30px;
 text-decoration:none;
 color:white;
+font-size:14px;
+letter-spacing:1px;
+transition:0.3s;
+}
+
+.home-btn a:hover{
+background:#d4af37;
+color:#0b2e25;
 }
 
 </style>
@@ -132,8 +142,6 @@ color:white;
 
 <h1>AI Skin Intelligence</h1>
 <p class="subtitle">Clinical-grade preliminary digital evaluation</p>
-
-<!-- STEP 1 -->
 
 <div class="step active" id="step1">
 
@@ -148,21 +156,17 @@ color:white;
 </div>
 
 
-<!-- STEP 2 -->
-
 <div class="step" id="step2">
 
 <label>Primary Skin Concern</label>
 
 <select id="concern">
-
 <option>Acne</option>
 <option>Pigmentation</option>
 <option>Dryness</option>
 <option>Oiliness</option>
 <option>Dark Spots</option>
 <option>Sensitivity</option>
-
 </select>
 
 <label>Describe Symptoms</label>
@@ -173,8 +177,6 @@ color:white;
 
 </div>
 
-
-<!-- STEP 3 -->
 
 <div class="step" id="step3">
 
@@ -221,22 +223,22 @@ document.getElementById("resultArea").innerHTML=
 "<strong>Subject:</strong> "+name+"<br>"+
 "<strong>Primary Concern:</strong> "+concern+"<br><br>"+
 
-"Our AI skin diagnostic engine is currently undergoing advanced development and clinical dataset training.<br><br>"+
+"Our AI skin diagnostic engine is currently under advanced development and dermatology dataset training.<br><br>"+
 
-"Your submitted information has been recorded to improve Verdant Root's AI dermatology intelligence system.<br><br>"+
+"This early interface represents the upcoming Verdant Root AI system designed to deliver affordable skin guidance for millions.<br><br>"+
 
-"The full AI skin analysis platform will soon provide:<br>"+
+"The complete platform will soon introduce:<br>"+
 "• AI skin pattern recognition<br>"+
-"• Dermatologist-backed recommendations<br>"+
-"• Affordable skincare guidance for Tier-2 & Tier-3 users<br>"+
-"• Progress tracking and personalized routines<br><br>"+
+"• Dermatologist-backed insights<br>"+
+"• Affordable routine suggestions<br>"+
+"• Progress tracking intelligence<br><br>"+
 
-"<em>This version is part of an early beta research environment and does not provide medical diagnosis.</em>"+
+"<em>This beta version is educational and not a medical diagnosis.</em>"+
 
 "</div>"+
 
-"<div class='home-icon'>"+
-"<a href='index.html'>🏡</a>"+
+"<div class='home-btn'>"+
+"<a href='index.html'>Return to Home</a>"+
 "</div>";
 
 },2600);
@@ -247,4 +249,5 @@ document.getElementById("resultArea").innerHTML=
 
 </body>
 </html>
+
 
